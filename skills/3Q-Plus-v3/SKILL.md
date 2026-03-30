@@ -17,6 +17,8 @@ triggers:
   - "3Q Plus"
   - "交付物检查"
   - "重要文档检查"
+  - "3Q check"
+  - "meta-cognitive check"
 best_for: 重要交付物完成后的系统性质量检查（六问框架：元认知 Q/标杆 Q/挑战 Q/逻辑 Q/用户 Q/竞争 Q）
 scenarios:
   - "重要文档完成后"
@@ -26,6 +28,31 @@ scenarios:
 ---
 
 # 3Q-Plus v3.0 - 元认知增强版自我挑战技能
+
+## 🌐 English Summary
+
+**Six-Question Meta-Cognitive Enhancement Framework**
+
+Advanced quality check for important deliverables using 6 dimensions:
+
+- **Meta-Cognitive Q**: Is my task understanding correct? (95% confidence)
+- **Benchmark Q**: How would top 1% in this field do it?
+- **Challenge Q**: What if my assumptions are completely wrong?
+- **Logic Q**: Is the argument self-consistent?
+- **User Q**: Is user value clear?
+- **Competition Q**: What's the differentiation?
+
+**Effect**: Ensures S-grade quality (≥14/15 points) for critical deliverables
+
+**Time**: 30-45 minutes
+
+**Score**: 15-point scale (S+:15, S:14-15, A:12-13, B:10-11, C:<10)
+
+**Triggers**: `3Q 检查`, `质量评分`, `3Q Plus`, `3Q check`, `meta-cognitive`
+
+---
+
+## 📖 详细文档
 
 ## 📖 Overview（概述）
 

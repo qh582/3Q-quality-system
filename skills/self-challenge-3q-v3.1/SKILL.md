@@ -12,6 +12,8 @@ triggers:
   - "13 问三层结构"
   - "深度质量检查"
   - "元认知挑战"
+  - "3Q check"
+  - "meta-cognitive challenge"
 best_for: 深度质量检查与元认知自我挑战（13 问三层结构）
 scenarios:
   - "重要文档发布前深度检查"
@@ -20,7 +22,29 @@ scenarios:
   - "技能/系统的自我检验"
 ---
 
-# self-challenge-3q-v3.1 - 元认知自我挑战技能（13 问三层结构）
+# self-challenge-3q-v3.1 - 元认知自我挑战技能
+
+## 🌐 English Summary
+
+**13-Question Meta-Cognitive Challenge Framework**
+
+A systematic quality assurance system using 13 questions across 3 dimensions:
+
+- **Logic Q (5 questions)**: Argument coherence, logical gaps, boundary conditions, assumption validation, counter-examples
+- **User Q (5 questions)**: Pain points, executability, common mistakes, use cases, perceived value
+- **Competition Q (3 questions)**: Differentiation, replicability, long-term evolution
+
+**Effect**: Rework rate ↓77%, S-grade deliverables ↑267%, delivery time ↓40%
+
+**Time**: 20-30 minutes (standard), 10 minutes (lite), 45-60 minutes (max)
+
+**Score**: 15-point scale (S+:15, S:14-15, A:12-13, B:10-11, C:<10)
+
+**Triggers**: `3Q 检查 v3.1`, `self-challenge`, `3Q check`, `meta-cognitive`
+
+---
+
+## 📖 详细文档
 
 ## 📖 Overview（概述）
 

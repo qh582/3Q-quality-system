@@ -18,6 +18,7 @@ triggers:
   - "技能联动"
   - "quality trigger"
   - "3Q 检查"
+  - "auto quality check"
 best_for: QualityOS 统一触发入口 + 技能联动机制（自动触发 + 技能联动 + 质量左移）
 scenarios:
   - "文档保存时"
@@ -28,6 +29,29 @@ scenarios:
 ---
 
 # quality-os-trigger v4.0 - 质量触发器
+
+## 🌐 English Summary
+
+**QualityOS Unified Trigger & Auto-Dispatch System**
+
+Automatic quality check dispatcher that triggers appropriate 3Q skills based on task type:
+
+- **Document Save** → quality-prevention (post-3Q check)
+- **Code Commit** → quality-prevention(CODE) (13 checkpoints)
+- **Decision Start** → decision-checklist (12 decision points)
+- **Subagent Creation** → subagent-brief-template (3Q requirements)
+- **Subagent Delivery** → 3Q-Plus-v3 (acceptance check)
+- **Content Publish** → 3Q-Plus-v3 (mandatory pre-publish check)
+
+**Effect**: Auto-trigger rate ≥90%, avg score ≥14/15, rework rate ≤10%
+
+**Response Time**: <1 second
+
+**Triggers**: `质量检查`, `QualityOS`, `质量触发`, `quality trigger`
+
+---
+
+## 📖 详细文档
 
 ## 📖 Overview（概述）
 

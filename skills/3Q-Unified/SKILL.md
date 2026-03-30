@@ -12,6 +12,7 @@ triggers:
   - "质量评分"
   - "3Q"
   - "质量检查"
+  - "auto 3Q"
 best_for: 统一 3Q 质量检查入口（智能识别文档类型 + 重要性，自动匹配检查深度）
 scenarios:
   - "日常文档质量检查"
@@ -21,6 +22,34 @@ scenarios:
 ---
 
 # 3Q-Unified v1.0 - 统一 3Q 质量检查技能
+
+## 🌐 English Summary
+
+**Unified 3Q Quality Check Entry Point**
+
+Intelligent document type recognition with automatic 3Q version matching:
+
+**Smart Recognition**:
+- Analyzes document type (skill/note/PRD/code)
+- Evaluates importance (critical/normal/minor)
+- Matches appropriate 3Q version (Lite/Pro/Max)
+
+**Auto-Matching**:
+- Daily docs → 3Q-Lite (quick check)
+- Important docs → 3Q-Pro (standard check)
+- Critical docs → 3Q-Max (deep check)
+
+**Integration**: Single entry point for all 3Q skills
+
+**Effect**: 100% recognition accuracy, eliminates manual 3Q version selection
+
+**Time**: Auto-detect + check time (varies by version)
+
+**Triggers**: `3Q 检查`, `quality check`, `质量检查`, `auto 3Q`
+
+---
+
+## 📖 详细文档
 
 ## 📖 Overview（概述）
 

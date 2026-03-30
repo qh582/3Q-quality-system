@@ -27,6 +27,32 @@ scenarios:
 
 # quality-os v1.0 - 质量操作系统
 
+## 🌐 English Summary
+
+**Unified Quality Operating System with 6 Core Modules**
+
+Comprehensive quality management system:
+
+**6 Modules**:
+1. **Task Module**: Task classification + 3Q adaptation
+2. **Quality Module**: 13 checkpoints + 3Q scoring
+3. **Decision Module**: 12 decision points + 3Q integration
+4. **Output Module**: Deliverable standards +验收 criteria
+5. **Knowledge Module**: Quality templates + best practices
+6. **AI Module**: AI-assisted quality checks
+
+**Coordination**: Orchestrates all quality skills (3Q, prevention, dashboard, etc.)
+
+**Effect**: Complete quality coverage, 92% auto-trigger rate, S-grade rate 55%
+
+**Use Case**: Project quality system setup, quality standard definition
+
+**Triggers**: `QualityOS`, `质量操作系统`, `quality system`
+
+---
+
+## 📖 详细文档
+
 ## 📖 Overview（概述）
 
 **quality-os** 是 DivePast 质量保障体系的操作系统，整合所有质量相关技能。

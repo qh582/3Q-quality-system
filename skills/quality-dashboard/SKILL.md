@@ -10,6 +10,7 @@ triggers:
   - "质量仪表板"
   - "生成 dashboard"
   - "quality dashboard"
+  - "quality metrics"
 best_for: 生成质量指标可视化仪表板
 scenarios:
   - "每周质量回顾"
@@ -18,6 +19,34 @@ scenarios:
 ---
 
 # quality-dashboard - 质量仪表板生成器
+
+## 🌐 English Summary
+
+**Quality Metrics Visualization Dashboard Generator**
+
+Generates visual dashboards for quality tracking:
+
+**Metrics Tracked**:
+- Auto-trigger rate (target: ≥90%)
+- Average quality score (target: ≥14/15)
+- S-grade deliverable rate (target: ≥50%)
+- Rework rate (target: ≤10%)
+
+**Output**:
+- Trend charts (weekly/monthly)
+- Quality distribution pie chart
+- Improvement recommendations
+- Markdown/PDF report export
+
+**Use Case**: Weekly quality review, team quality reporting
+
+**Effect**: Visual quality tracking, data-driven improvement
+
+**Triggers**: `质量仪表板`, `生成 dashboard`, `quality dashboard`
+
+---
+
+## 📖 详细文档
 
 ## 📖 Overview
 

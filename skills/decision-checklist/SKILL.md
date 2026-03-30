@@ -14,12 +14,49 @@ triggers:
   - "怎么做决定"
   - "decision making"
   - "决策清单"
+  - "major decision"
 best_for: 重大决策前的全流程检查（12 个决策点 + 三阶段 3Q）
 scenarios:
   - "面临重大选择时"
   - "需要系统性评估方案时"
   - "决策前风险评估"
   - "项目启动前的决策验证"
+---
+
+# decision-checklist-v2 - 决策清单 +3Q
+
+## 🌐 English Summary
+
+**Comprehensive Decision-Making Framework with 3Q Integration**
+
+Three-phase decision quality assurance:
+
+**Phase 1: Pre-Decision 3Q (5 min)**
+- Logic Q: Is decision goal clear? (SMART)
+- User Q: Who are stakeholders?
+- Competition Q: At least 3 alternatives considered?
+
+**Phase 2: 12 Decision Points (during execution)**
+- Problem definition (2 points)
+- Information gathering (2 points)
+- Solution design (3 points)
+- Evaluation criteria (2 points)
+- Decision execution (3 points)
+
+**Phase 3: Post-Decision 3Q Review (10 min)**
+- Decision quality assessment
+- Stakeholder satisfaction
+- Lessons learned
+
+**Effect**: S-grade decision rate 67%, rework rate 0%
+
+**Time**: 30-45 minutes total
+
+**Triggers**: `重大决策`, `决策检查`, `decision making`, `major decision`
+
+---
+
+## 📖 详细文档
 api_used: []
 scripts: []
 question_count: 12dependencies:

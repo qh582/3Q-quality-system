@@ -225,6 +225,35 @@ ls skills/*/SKILL.md
 
 ---
 
+## 🔧 配置示例
+
+### HEARTBEAT.md
+
+```markdown
+## 🚀 QualityOS 统一触发器
+
+**自动触发规则**：
+| 场景 | 触发技能 |
+|------|---------|
+| 文档保存 | quality-prevention |
+| 代码提交 | quality-prevention(CODE) |
+| 决策开始 | decision-checklist |
+| 子代理交付 | 3Q-Plus-v3 |
+```
+
+### quality-metrics.json
+
+```json
+{
+  "autoTriggerRate": 0.90,
+  "avgScore": 14.0,
+  "sGradeRatio": 0.50,
+  "reworkRate": 0.10
+}
+```
+
+---
+
 ## ❓ 常见问题
 
 ### Q: 3Q 检查会不会很慢？

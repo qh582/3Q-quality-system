@@ -8,13 +8,12 @@
 
 ---
 
-## 🚀 快速开始
+## 🚀 5 分钟快速开始
 
-### 5 分钟安装
+### 一键安装
 
 ```bash
-# 1. 克隆项目
-git clone <your-repo-url>
+# 1. 进入安装包目录
 cd 3Q-Installation-Pack
 
 # 2. 运行安装脚本
@@ -24,30 +23,24 @@ cd 3Q-Installation-Pack
 ls ~/.openclaw/workspace-main/skills/ | grep -E "3Q|quality"
 ```
 
-### 一键部署到 GitHub
+### 手动安装
 
 ```bash
-# 初始化 Git
-cd 3Q-Installation-Pack
-git init
-git branch -m main
-git config user.name "your-username"
-git config user.email "your-email@example.com"
+# 1. 复制技能文件
+cp -r skills/* ~/.openclaw/workspace-main/skills/
 
-# 添加所有文件
-git add .
-git commit -m "feat: 3Q 质量体系 v4.0 初始版本"
+# 2. 配置 HEARTBEAT.md
+cat config/HEARTBEAT.md.example >> ~/.openclaw/workspace-main/HEARTBEAT.md
 
-# 推送到 GitHub（需要先创建仓库）
-git remote add origin git@github.com:your-username/3Q-quality-system.git
-git push -u origin main
+# 3. 验证安装
+test -f ~/.openclaw/workspace-main/skills/self-challenge-3q-v3.1/SKILL.md && echo "✅ 安装成功"
 ```
 
 ---
 
 ## 📦 包含内容
 
-### 核心技能（6 个）
+### 6 个核心技能
 
 | 技能 | 定位 | 核心方法 |
 |------|------|----------|
@@ -58,18 +51,12 @@ git push -u origin main
 | **decision-checklist-v2** | 决策清单 | 12 决策点 + 三阶段 3Q |
 | **subagent-brief-template-v3** | 子代理模板 | 质量要求前置 |
 
-### 文档
+### 文档和工具
 
-- `README.md` - 完整安装指南（11KB）
-- `QUICKSTART.md` - 快速开始指南（5 分钟上手）
-- `分享版 - 给朋友.md` - 精简介绍文档
-- `INDEX.md` - 文件索引
-
-### 工具
-
+- `README.md` - 本文件（完整指南）
+- `分享版 - 给朋友.md` - 精简介绍（适合分享）
 - `install.sh` - 一键安装脚本
-- `config/HEARTBEAT.md.example` - 心跳配置示例
-- `config/quality-metrics.json.example` - 质量指标示例
+- `config/` - 配置示例（HEARTBEAT.md.example, quality-metrics.json.example）
 
 ---
 
@@ -77,26 +64,24 @@ git push -u origin main
 
 ### 13 问三层结构
 
-```
-逻辑 Q（5 问）→ 论证是否自洽
-  ├─ Q1: 核心论点是否有充分支撑？
-  ├─ Q2: 有无逻辑漏洞或跳跃？
-  ├─ Q3: 边界条件是否清晰？
-  ├─ Q4: 核心假设是否检验？
-  └─ Q5: 能找到反例挑战自己？
+**逻辑 Q（5 问）** - 论证是否自洽
+1. 核心论点是否有充分支撑？
+2. 有无逻辑漏洞或跳跃？
+3. 边界条件是否清晰？
+4. 核心假设是否检验？
+5. 能找到反例挑战自己？
 
-用户 Q（5 问）→ 用户价值是否清晰
-  ├─ Q6: 解决了用户什么真实痛点？
-  ├─ Q7: 解决方案是否可执行？
-  ├─ Q8: 常见错误是否提示？
-  ├─ Q9: 使用场景是否具体？
-  └─ Q10: 价值是否可感知？
+**用户 Q（5 问）** - 用户价值是否清晰
+6. 解决了用户什么真实痛点？
+7. 解决方案是否可执行？
+8. 常见错误是否提示？
+9. 使用场景是否具体？
+10. 价值是否可感知？
 
-竞争 Q（3 问）→ 是否有差异化
-  ├─ Q11: 与现有方案比有什么独特优势？
-  ├─ Q12: 是否容易被复制？
-  └─ Q13: 长期演进方向是什么？
-```
+**竞争 Q（3 问）** - 是否有差异化
+11. 与现有方案比有什么独特优势？
+12. 是否容易被复制？
+13. 长期演进方向是什么？
 
 ### 自动触发机制
 
@@ -108,6 +93,14 @@ git push -u origin main
 | 子代理创建 | 任务下达时 | subagent-brief-template |
 | 子代理交付 | 任务完成时 | 3Q 自动验收 |
 | 内容发布 | 发布前 | 3Q-Plus-v3（强制检查） |
+
+### 评分标准
+
+**15 分制**：
+- **15 分** = S+ 卓越，可直接发布
+- **14-15 分** = S 优秀，微调后可发布
+- **12-13 分** = A 良好，需要优化
+- **<12 分** = 需要重大修改
 
 ---
 
@@ -123,7 +116,7 @@ git push -u origin main
 
 ---
 
-## 📚 使用案例
+## 💡 使用案例
 
 ### 案例 1：文档发布前检查
 
@@ -165,48 +158,94 @@ git push -u origin main
 
 ---
 
-## 🔧 安装指南
+## 📚 学习路径
 
-### 系统要求
+### Day 1：理解理念（30 分钟）
+- ✅ 阅读本 README
+- ✅ 理解 13 问三层结构
+- ✅ 理解质量左移理念
+
+### Day 2：手动使用（1 天）
+- ✅ 完成一个任务后，手动触发"3Q 检查 v3.1"
+- ✅ 回答 13 问
+- ✅ 评分并改进
+
+### Day 3-4：配置自动化（2 天）
+- ✅ 配置 HEARTBEAT.md
+- ✅ 配置自动触发规则
+- ✅ 配置质量指标追踪
+
+### Week 2：全面使用（持续）
+- ✅ 所有任务都通过 3Q 检查
+- ✅ 建立 3Q 答案模板库
+- ✅ 每周回顾质量指标
+
+---
+
+## 🔧 系统要求
 
 - OpenClaw v2.0+
 - Node.js v18+
 - Git 2.0+
 - Bash 4.0+
 
-### 安装步骤
+---
 
-#### 方式 A：一键安装（推荐）
+## 📖 详细文档
 
-```bash
-cd 3Q-Installation-Pack
-./install.sh
-```
-
-#### 方式 B：手动安装
-
-```bash
-# 1. 复制技能文件
-cp -r skills/* ~/.openclaw/workspace-main/skills/
-
-# 2. 配置 HEARTBEAT.md
-cat config/HEARTBEAT.md.example >> ~/.openclaw/workspace-main/HEARTBEAT.md
-
-# 3. 创建质量指标文件
-cp config/quality-metrics.json.example ~/.openclaw/workspace-main/quality-metrics.json
-
-# 4. 验证安装
-test -f ~/.openclaw/workspace-main/skills/self-challenge-3q-v3.1/SKILL.md && echo "✅ 安装成功"
-```
+- **[README.md](README.md)** - 本文件（完整指南）
+- **[分享版 - 给朋友.md](分享版 - 给朋友.md)** - 精简介绍（适合分享给朋友）
+- **skills/*/SKILL.md** - 每个技能的详细文档
 
 ---
 
-## 📖 文档
+## ❓ 常见问题
 
-- **[README.md](README.md)** - 完整安装指南和使用说明
-- **[QUICKSTART.md](QUICKSTART.md)** - 5 分钟快速上手
-- **[分享版 - 给朋友.md](分享版 - 给朋友.md)** - 精简介绍（适合分享）
-- **[INDEX.md](INDEX.md)** - 文件索引
+### Q: 3Q 检查会不会很慢？
+
+**A**: 初期慢（20-30 分钟），熟练后 10 分钟。而且省下的返工时间远超检查时间！
+
+**对比**：
+- 不检查：1 小时 + 2 小时返工 = 3 小时
+- 检查：1 小时 + 20 分钟 = 1 小时 20 分钟
+- **节省**：1 小时 40 分钟
+
+---
+
+### Q: 简单任务也要 3Q 吗？
+
+**A**: 用 3Q-Lite（核心 3 问，5-10 分钟）：
+- Q1: 核心论点是否有支撑？
+- Q6: 解决了什么痛点？
+- Q11: 差异化在哪里？
+
+---
+
+### Q: 如何保证 Agent 真的做 3Q 检查？
+
+**A**: 
+1. 配置自动触发（最重要）
+2. 子代理交付必须附带 3Q 评分表
+3. 定期抽查质量指标
+
+---
+
+### Q: 3Q 适合什么场景？
+
+**A**: 所有需要质量保障的场景！
+
+**适用**：
+- ✅ 文档写作（技能文档/学习笔记/PRD）
+- ✅ 代码开发（功能开发/Bug 修复/重构）
+- ✅ 决策制定（技术选型/方案选择/战略规划）
+- ✅ 内容创作（小红书/公众号/知乎）
+- ✅ 子代理任务派发
+- ✅ 系统整合（多模块项目）
+
+**不适用**：
+- ❌ 紧急 Bug 修复（先用 3Q-Lite 快速检查）
+- ❌ 探索性实验（允许失败，不需要严格检查）
+- ❌ 一次性任务（投入产出比低）
 
 ---
 
@@ -240,24 +279,18 @@ MIT License - 自由使用、修改、分发
 
 ### 遇到问题？
 
-1. 查看 [QUICKSTART.md](QUICKSTART.md)（快速上手）
-2. 查看 [README.md](README.md)（完整文档）
-3. 查看 `skills/*/SKILL.md`（技能详情）
-
-### 联系方式
-
-- 项目主页：[GitHub 仓库链接]
-- 问题反馈：[Issues](../../issues)
-- 讨论区：[Discussions](../../discussions)
+1. 查看 [分享版 - 给朋友.md](分享版 - 给朋友.md)（快速介绍）
+2. 查看 `skills/*/SKILL.md`（技能详情）
+3. 提交 Issue：[GitHub Issues](../../issues)
 
 ---
 
-## 🌟 星历史
+## 🌟 版本历史
 
-- **2026-03-30**: v4.0 发布 - 13 问三层结构 + 自动触发机制
-- **2026-03-28**: v3.0 发布 - 元认知增强版
-- **2026-03-16**: v2.0 发布 - 量化评分系统
-- **2026-03-XX**: v1.0 发布 - 基础框架
+- **2026-03-30**: v4.0 - 13 问三层结构 + 自动触发机制
+- **2026-03-28**: v3.0 - 元认知增强版
+- **2026-03-16**: v2.0 - 量化评分系统
+- **2026-03-XX**: v1.0 - 基础框架
 
 ---
 

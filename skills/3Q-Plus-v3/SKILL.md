@@ -56,7 +56,7 @@ Advanced quality check for important deliverables using 6 dimensions:
 
 ## 📖 Overview（概述）
 
-**3Q-Plus v3.0** 是 DivePast 质量保障体系的核心技能，用于重要交付物完成后的系统性质量检查。
+**3Q-Plus v3.0** 是 3Q 质量保障体系的核心技能，用于重要交付物完成后的系统性质量检查。
 
 通过**六问框架**（元认知 Q、标杆 Q、挑战 Q、逻辑 Q、用户 Q、竞争 Q），帮助创作者突破自我视角局限，以批判性思维和元认知能力审视内容质量。
 

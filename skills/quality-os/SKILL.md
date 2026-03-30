@@ -55,7 +55,7 @@ Comprehensive quality management system:
 
 ## 📖 Overview（概述）
 
-**quality-os** 是 DivePast 质量保障体系的操作系统，整合所有质量相关技能。
+**quality-os** 是 3Q 质量保障体系的操作系统，整合所有质量相关技能。
 
 通过**六大模块**（Task/Quality/Decision/Output/Knowledge/AI），提供统一的质量管理框架。
 

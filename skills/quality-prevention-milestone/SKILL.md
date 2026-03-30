@@ -58,7 +58,7 @@ Proactive quality assurance across three phases:
 
 ## 📖 Overview（概述）
 
-**quality-prevention-milestone** 是 DivePast 质量保障体系的预防技能，提供三阶段质量预防框架。
+**quality-prevention-milestone** 是 3Q 质量保障体系的预防技能，提供三阶段质量预防框架。
 
 通过**事前 3Q + 事中 13 检查点 + 事后 3Q**，实现质量左移，提前发现并预防问题。
 

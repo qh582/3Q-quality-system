@@ -68,7 +68,7 @@ question_count: 12dependencies:
 
 ## 📖 Overview（概述）
 
-**decision-checklist** 是 DivePast 决策支持技能。
+**decision-checklist** 是 决策全流程技能。
 
 **适用场景**：
 - 重大决策前检查
@@ -291,7 +291,7 @@ question_count: 12dependencies:
 
 ```markdown
 ### 逻辑问
-- ✅ 决策目标清晰：选择适合 DivePast 的前端框架
+- ✅ 决策目标清晰：选择适合项目的前端框架
 - ✅ 核心逻辑自洽：考虑团队技能/生态/性能
 - ✅ 信息收集充分：已调研 3 个框架
 

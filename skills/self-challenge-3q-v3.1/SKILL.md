@@ -48,7 +48,7 @@ A systematic quality assurance system using 13 questions across 3 dimensions:
 
 ## 📖 Overview（概述）
 
-**self-challenge-3q-v3.1** 是 DivePast 质量保障体系的核心技能，提供**13 问三层结构**的深度检查框架。
+**self-challenge-3q-v3.1** 是 3Q 质量保障体系的核心技能，提供**13 问三层结构**的深度检查框架。
 
 通过**逻辑 Q（5 问）+ 用户 Q（5 问）+ 竞争 Q（3 问）**，实现系统性元认知自我挑战，提前发现潜在问题。
 

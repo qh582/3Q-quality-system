@@ -60,7 +60,7 @@ sub_skills:
 
 ## 📖 Overview（概述）
 
-**task-breakdown** 是 DivePast 任务管理的核心技能。
+**task-breakdown** 是 任务拆解与质量适配的核心技能。
 
 **适用场景**：
 - 复杂任务拆解

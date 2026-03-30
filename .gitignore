@@ -1,0 +1,24 @@
+# Git
+.git/
+*.log
+
+# Node
+node_modules/
+npm-debug.log
+
+# macOS
+.DS_Store
+
+# Backup
+backup-*/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary
+tmp/
+temp/
+*.tmp

@@ -1,0 +1,29 @@
+{
+  "autoTriggerRate": 0.90,
+  "avgScore": 14.0,
+  "sGradeRatio": 0.50,
+  "reworkRate": 0.10,
+  "lastUpdate": "2026-03-30",
+  "taskDistribution": {
+    "mechanical": 0.40,
+    "creative": 0.40,
+    "decision": 0.10,
+    "integration": 0.10
+  },
+  "weeklyTrend": [
+    {
+      "week": "2026-W13",
+      "autoTriggerRate": 0.88,
+      "avgScore": 13.8,
+      "sGradeRatio": 0.45,
+      "reworkRate": 0.12
+    },
+    {
+      "week": "2026-W14",
+      "autoTriggerRate": 0.90,
+      "avgScore": 14.0,
+      "sGradeRatio": 0.50,
+      "reworkRate": 0.10
+    }
+  ]
+}

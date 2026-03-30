@@ -65,6 +65,24 @@ test -f ~/.openclaw/workspace-main/skills/self-challenge-3q-v3.1/SKILL.md && ech
 - **3Q-FUSION-PLAN.md** - 3Q 融合计划
 - **3Q-SYSTEM.md** - 3Q 系统说明
 
+---
+
+## 🧹 清理说明（2026-03-30）
+
+**已删除冗余文档**：15 个（约 60KB）
+
+**删除内容**：
+- 交付总结文档（DELIVERY-SUMMARY.md 等）
+- 对比文档（COMPARISON.md 等）
+- 验证文档（*-validation.md 等）
+- 版本文档（*-v3.md 等）
+- 临时中文文档（快速启动指南.md 等）
+
+**保留内容**：
+- 每个技能的 SKILL.md（核心）
+- 必要的示例文件（examples/）
+- 关键规则文档（RECOGNITION-RULES.md）
+
 ### 文档和工具
 
 - `README.md` - 本文件（完整指南）

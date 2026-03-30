@@ -40,7 +40,7 @@ test -f ~/.openclaw/workspace-main/skills/self-challenge-3q-v3.1/SKILL.md && ech
 
 ## 📦 包含内容
 
-### 6 个核心技能
+### 🎯 核心技能（6 个）
 
 | 技能 | 定位 | 核心方法 |
 |------|------|----------|
@@ -50,6 +50,20 @@ test -f ~/.openclaw/workspace-main/skills/self-challenge-3q-v3.1/SKILL.md && ech
 | **task-breakdown-v3** | 任务拆解 | 4 象限分类 +3Q 适配 |
 | **decision-checklist-v2** | 决策清单 | 12 决策点 + 三阶段 3Q |
 | **subagent-brief-template-v3** | 子代理模板 | 质量要求前置 |
+
+### 🛠️ 辅助技能（4 个）
+
+| 技能 | 定位 | 核心方法 |
+|------|------|----------|
+| **quality-prevention-milestone** | 质量预防 | 13 检查点 + 事前预防 |
+| **3Q-Unified** | 统一框架 | 3Q 识别规则 + 分类 |
+| **quality-os** | 顶层协调 | 质量操作系统 |
+| **quality-dashboard** | 可视化 | 质量指标仪表板 |
+
+### 📚 规划文档（2 个）
+
+- **3Q-FUSION-PLAN.md** - 3Q 融合计划
+- **3Q-SYSTEM.md** - 3Q 系统说明
 
 ### 文档和工具
 

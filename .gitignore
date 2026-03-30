@@ -22,3 +22,11 @@ backup-*/
 tmp/
 temp/
 *.tmp
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+logs/
+*.log

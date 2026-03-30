@@ -1,0 +1,7 @@
+# 日志目录 - 存放技能调用日志文件
+
+# 主日志文件
+skill_calls.jsonl
+
+# 归档日志（按日期）
+# skill_calls_2026-03-18.jsonl.gz

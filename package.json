@@ -42,7 +42,7 @@
     "4 种分级检查版本（3Q-Max/Pro/Lite/Decision）",
     "HEARTBEAT 集成（定时质量检查）",
     "15 分制质量评分系统",
-    "9 个完整技能（6 核心 +3 辅助）"
+    "8 个完整技能（6 核心 +2 辅助）"
   ],
   "manualTriggers": true,
   "autoTriggerNote": "Git hooks/文件监听需自行集成，见 README.md 自动化集成章节",
@@ -94,11 +94,7 @@
       "description": "质量操作系统",
       "triggers": ["quality os", "质量系统"]
     },
-    {
-      "name": "quality-dashboard",
-      "description": "质量仪表板生成器",
-      "triggers": ["质量仪表板", "生成 dashboard"]
-    }
+
   ],
   "quickstart": {
     "title": "5 分钟快速开始",

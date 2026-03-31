@@ -18,17 +18,21 @@
 
 **快速安装**（复制粘贴）：
 ```bash
-# 1. 进入安装包目录
+# 1. 定义 WORKSPACE 变量
+WORKSPACE="$HOME/.openclaw/workspace-main"
+# 或自定义路径：WORKSPACE="/path/to/your/workspace"
+
+# 2. 进入安装包目录
 cd 3Q-Installation-Pack
 
-# 2. 复制技能文件
-cp -r skills/* ~/.openclaw/workspace-main/skills/
+# 3. 复制技能文件
+cp -r skills/* $WORKSPACE/skills/
 
-# 3. 追加 HEARTBEAT 配置（详见 MANUAL-INSTALL.md）
-# 4. 创建 quality-metrics.json（详见 MANUAL-INSTALL.md）
+# 4. 追加 HEARTBEAT 配置（详见 MANUAL-INSTALL.md）
+# 5. 创建 quality-metrics.json（详见 MANUAL-INSTALL.md）
 
-# 5. 验证安装
-ls ~/.openclaw/workspace-main/skills/ | grep -E "3Q|quality"
+# 6. 验证安装
+ls $WORKSPACE/skills/ | grep -E "3Q|quality"
 ```
 
 ---
@@ -36,12 +40,17 @@ ls ~/.openclaw/workspace-main/skills/ | grep -E "3Q|quality"
 ## ⚠️ 重要说明（安装前必读）
 
 **安装将修改以下文件**：
-- `~/.openclaw/workspace-main/HEARTBEAT.md` - 添加 QualityOS 配置
-- `~/.openclaw/workspace-main/quality-metrics.json` - 创建质量指标文件（如不存在）
+- `$WORKSPACE/HEARTBEAT.md` - 添加 QualityOS 配置
+- `$WORKSPACE/quality-metrics.json` - 创建质量指标文件（如不存在）
+
+**`$WORKSPACE` 是什么？**
+- 默认：`~/.openclaw/workspace-main`
+- 自定义：通过 `openclaw status` 查看你的实际路径
 
 **备份建议**：
 ```bash
-cp ~/.openclaw/workspace-main/HEARTBEAT.md ~/.openclaw/workspace-main/HEARTBEAT.md.backup.$(date +%Y%m%d-%H%M%S)
+WORKSPACE="$HOME/.openclaw/workspace-main"
+cp $WORKSPACE/HEARTBEAT.md $WORKSPACE/HEARTBEAT.md.backup.$(date +%Y%m%d-%H%M%S)
 ```
 
 ---

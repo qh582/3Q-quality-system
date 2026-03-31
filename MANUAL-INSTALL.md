@@ -10,13 +10,20 @@
 **安装前请阅读**：
 
 本技能包将修改以下文件：
-- `~/.openclaw/workspace-main/HEARTBEAT.md` - 添加 QualityOS 配置
-- `~/.openclaw/workspace-main/quality-metrics.json` - 创建质量指标文件（如不存在）
+- `$WORKSPACE/HEARTBEAT.md` - 添加 QualityOS 配置
+- `$WORKSPACE/quality-metrics.json` - 创建质量指标文件（如不存在）
+
+**`$WORKSPACE` 是什么？**
+- 默认：`~/.openclaw/workspace-main`
+- 自定义：你的 OpenClaw workspace 路径（通过 `openclaw status` 查看）
 
 **备份建议**：
 ```bash
+# 定义 WORKSPACE 变量（如自定义路径请修改）
+WORKSPACE="$HOME/.openclaw/workspace-main"
+
 # 备份 HEARTBEAT.md
-cp ~/.openclaw/workspace-main/HEARTBEAT.md ~/.openclaw/workspace-main/HEARTBEAT.md.backup.$(date +%Y%m%d-%H%M%S)
+cp $WORKSPACE/HEARTBEAT.md $WORKSPACE/HEARTBEAT.md.backup.$(date +%Y%m%d-%H%M%S)
 ```
 
 ---
@@ -27,10 +34,24 @@ cp ~/.openclaw/workspace-main/HEARTBEAT.md ~/.openclaw/workspace-main/HEARTBEAT.
 
 ```bash
 # 确认 OpenClaw workspace 存在
+# 方法 1：默认路径
 ls -d ~/.openclaw/workspace-main
+
+# 方法 2：查看你的实际路径
+openclaw status
+# 输出中的 "repo=" 或 "workspace=" 即为你的 workspace 路径
 ```
 
 如果目录不存在，请先安装 OpenClaw。
+
+**定义环境变量**（推荐）：
+```bash
+# 添加到 ~/.bashrc 或 ~/.zshrc
+export WORKSPACE="$HOME/.openclaw/workspace-main"
+
+# 或自定义路径
+export WORKSPACE="/path/to/your/workspace"
+```
 
 ---
 
@@ -40,18 +61,21 @@ ls -d ~/.openclaw/workspace-main
 # 进入安装包目录
 cd 3Q-Installation-Pack
 
+# 定义 WORKSPACE 变量（如果之前未定义）
+WORKSPACE="$HOME/.openclaw/workspace-main"
+
 # 复制 6 个核心技能到 workspace
-cp -r skills/self-challenge-3q-v3.1 ~/.openclaw/workspace-main/skills/
-cp -r skills/3Q-Plus-v3 ~/.openclaw/workspace-main/skills/
-cp -r skills/quality-os-trigger ~/.openclaw/workspace-main/skills/
-cp -r skills/task-breakdown-v3 ~/.openclaw/workspace-main/skills/
-cp -r skills/decision-checklist-v2 ~/.openclaw/workspace-main/skills/
-cp -r skills/subagent-brief-template-v3 ~/.openclaw/workspace-main/skills/
+cp -r skills/self-challenge-3q-v3.1 $WORKSPACE/skills/
+cp -r skills/3Q-Plus-v3 $WORKSPACE/skills/
+cp -r skills/quality-os-trigger $WORKSPACE/skills/
+cp -r skills/task-breakdown-v3 $WORKSPACE/skills/
+cp -r skills/decision-checklist-v2 $WORKSPACE/skills/
+cp -r skills/subagent-brief-template-v3 $WORKSPACE/skills/
 
 # 复制 3 个辅助技能（可选）
-cp -r skills/quality-prevention-milestone ~/.openclaw/workspace-main/skills/
-cp -r skills/quality-os ~/.openclaw/workspace-main/skills/
-cp -r skills/quality-dashboard ~/.openclaw/workspace-main/skills/
+cp -r skills/quality-prevention-milestone $WORKSPACE/skills/
+cp -r skills/quality-os $WORKSPACE/skills/
+cp -r skills/quality-dashboard $WORKSPACE/skills/
 ```
 
 ---
@@ -60,7 +84,7 @@ cp -r skills/quality-dashboard ~/.openclaw/workspace-main/skills/
 
 **检查是否已存在 QualityOS 配置**：
 ```bash
-grep "QualityOS 统一触发器" ~/.openclaw/workspace-main/HEARTBEAT.md
+grep "QualityOS 统一触发器" $WORKSPACE/HEARTBEAT.md
 ```
 
 - 如果有输出 → 已配置，跳过此步骤
@@ -68,7 +92,7 @@ grep "QualityOS 统一触发器" ~/.openclaw/workspace-main/HEARTBEAT.md
 
 **追加配置**：
 ```bash
-cat >> ~/.openclaw/workspace-main/HEARTBEAT.md << 'EOF'
+cat >> $WORKSPACE/HEARTBEAT.md << 'EOF'
 
 ---
 
@@ -104,10 +128,10 @@ EOF
 
 ```bash
 # 检查是否已存在
-ls ~/.openclaw/workspace-main/quality-metrics.json
+ls $WORKSPACE/quality-metrics.json
 
 # 如不存在则创建
-cat > ~/.openclaw/workspace-main/quality-metrics.json << 'EOF'
+cat > $WORKSPACE/quality-metrics.json << 'EOF'
 {
   "manualTriggerRate": 0.90,
   "avgScore": 14.0,
@@ -130,18 +154,18 @@ EOF
 
 ```bash
 # 验证 6 个核心技能
-ls ~/.openclaw/workspace-main/skills/self-challenge-3q-v3.1/SKILL.md
-ls ~/.openclaw/workspace-main/skills/3Q-Plus-v3/SKILL.md
-ls ~/.openclaw/workspace-main/skills/quality-os-trigger/SKILL.md
-ls ~/.openclaw/workspace-main/skills/task-breakdown-v3/SKILL.md
-ls ~/.openclaw/workspace-main/skills/decision-checklist-v2/SKILL.md
-ls ~/.openclaw/workspace-main/skills/subagent-brief-template-v3/SKILL.md
+ls $WORKSPACE/skills/self-challenge-3q-v3.1/SKILL.md
+ls $WORKSPACE/skills/3Q-Plus-v3/SKILL.md
+ls $WORKSPACE/skills/quality-os-trigger/SKILL.md
+ls $WORKSPACE/skills/task-breakdown-v3/SKILL.md
+ls $WORKSPACE/skills/decision-checklist-v2/SKILL.md
+ls $WORKSPACE/skills/subagent-brief-template-v3/SKILL.md
 
 # 验证 HEARTBEAT 配置
-grep "QualityOS" ~/.openclaw/workspace-main/HEARTBEAT.md
+grep "QualityOS" $WORKSPACE/HEARTBEAT.md
 
 # 验证质量指标文件
-cat ~/.openclaw/workspace-main/quality-metrics.json
+cat $WORKSPACE/quality-metrics.json
 ```
 
 **全部通过** → ✅ 安装成功！
@@ -172,14 +196,17 @@ cat ~/.openclaw/workspace-main/quality-metrics.json
 
 **A**: 手动删除即可：
 ```bash
+# 定义 WORKSPACE 变量
+WORKSPACE="$HOME/.openclaw/workspace-main"
+
 # 删除技能
-rm -rf ~/.openclaw/workspace-main/skills/self-challenge-3q-v3.1
-rm -rf ~/.openclaw/workspace-main/skills/3Q-Plus-v3
+rm -rf $WORKSPACE/skills/self-challenge-3q-v3.1
+rm -rf $WORKSPACE/skills/3Q-Plus-v3
 # ... 其他技能
 
 # 删除配置（可选）
 # 手动编辑 HEARTBEAT.md，删除 QualityOS 部分
-rm ~/.openclaw/workspace-main/quality-metrics.json
+rm $WORKSPACE/quality-metrics.json
 ```
 
 ### Q: 如何更新？

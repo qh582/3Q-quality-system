@@ -1,4 +1,4 @@
-# 3Q 质量体系 - OpenClaw 质量保障系统
+# 3Q 质量体系 - 手动质量检查框架
 
 [![Quality Score](https://img.shields.io/badge/quality-15/15-brightgreen)]()
 [![Version](https://img.shields.io/badge/version-v4.0-blue)]()
@@ -8,19 +8,40 @@
 > 
 > 返工率 ↓77% · 交付时间 ↓40% · S 级交付物 ↑267%
 
+**定位**：3Q 是一个**思维框架 + 技能包集合**，帮助你系统化地进行质量检查。自动触发功能需要额外集成（见"自动化集成"章节）。
+
 ---
 
 ## 🚀 5 分钟快速开始
 
+**详细安装步骤**：请阅读 [`MANUAL-INSTALL.md`](./MANUAL-INSTALL.md)
+
+**快速安装**（复制粘贴）：
 ```bash
 # 1. 进入安装包目录
 cd 3Q-Installation-Pack
 
-# 2. 运行安装脚本
-./install.sh
+# 2. 复制技能文件
+cp -r skills/* ~/.openclaw/workspace-main/skills/
 
-# 3. 验证安装
+# 3. 追加 HEARTBEAT 配置（详见 MANUAL-INSTALL.md）
+# 4. 创建 quality-metrics.json（详见 MANUAL-INSTALL.md）
+
+# 5. 验证安装
 ls ~/.openclaw/workspace-main/skills/ | grep -E "3Q|quality"
+```
+
+---
+
+## ⚠️ 重要说明（安装前必读）
+
+**安装将修改以下文件**：
+- `~/.openclaw/workspace-main/HEARTBEAT.md` - 添加 QualityOS 配置
+- `~/.openclaw/workspace-main/quality-metrics.json` - 创建质量指标文件（如不存在）
+
+**备份建议**：
+```bash
+cp ~/.openclaw/workspace-main/HEARTBEAT.md ~/.openclaw/workspace-main/HEARTBEAT.md.backup.$(date +%Y%m%d-%H%M%S)
 ```
 
 ---
@@ -128,12 +149,20 @@ ls ~/.openclaw/workspace-main/skills/ | grep -E "3Q|quality"
 | **3Q-Lite** | 机械类任务 | 5-10 分钟 | ≥12/15（B 级） |
 | **3Q-Decision** | 决策类任务 | 30-45 分钟 | ≥13/15（A 级） |
 
-### 自动触发机制
+### 触发方式
 
-- 📄 **文档保存** → 自动 3Q 检查
-- 💻 **代码提交** → 自动质量验证
-- 🤖 **子代理交付** → 自动验收
-- 📢 **内容发布** → 强制检查
+**手动触发**（开箱即用）：
+- 📄 对任意文档说："3Q 检查 v3.1"
+- 💻 代码提交前手动运行质量检查
+- 🤖 子代理任务派发时使用 subagent-brief-template
+- 📢 内容发布前手动触发 3Q-Plus-v3
+
+**自动触发**（需要集成）：
+- 通过 HEARTBEAT 机制实现定时检查（推荐）
+- 通过 Git hooks 实现提交前检查（需自行配置）
+- 通过文件监听实现保存时检查（需自行配置）
+
+详见"🔧 自动化集成"章节。
 
 ---
 
@@ -155,7 +184,7 @@ ls ~/.openclaw/workspace-main/skills/ | grep -E "3Q|quality"
 **场景**：写完技能文档
 
 ```
-写完 → 触发"3Q 检查 v3.1" → 13 问检查（20 分钟）→ 
+写完 → 手动触发"3Q 检查 v3.1" → 13 问检查（20 分钟）→ 
 发现 3 个问题 → 优化 → 评分 14/15 → 发布 ✅
 ```
 
@@ -169,8 +198,8 @@ ls ~/.openclaw/workspace-main/skills/ | grep -E "3Q|quality"
 
 ```
 创建任务 → 使用 subagent-brief-template →
-自动填充 3Q 要求 → 子代理交付 → 
-3Q-Plus-v3 自动验收 → 验证评分≥12/15 → 通过 ✅
+手动填充 3Q 要求 → 子代理交付 → 
+手动触发 3Q-Plus-v3 验收 → 验证评分≥12/15 → 通过 ✅
 ```
 
 **结果**：返工率从 40% → 8%！
@@ -182,7 +211,7 @@ ls ~/.openclaw/workspace-main/skills/ | grep -E "3Q|quality"
 **场景**：选择前端框架（React vs Vue）
 
 ```
-触发 decision-checklist → 
+手动触发 decision-checklist → 
 事前 3Q（15/15）→ 事中 12 决策点（12/12）→ 
 事后 3Q 复盘（15/15）→ 质量等级 S ✅
 ```
@@ -279,44 +308,108 @@ ls skills/*/SKILL.md
 ### Q: 如何保证 Agent 真的做 3Q 检查？
 
 **A**: 
-1. 配置自动触发（最重要）
-2. 子代理交付必须附带 3Q 评分表
-3. 定期抽查质量指标
+1. **手动触发** - 养成习惯，关键任务前主动触发
+2. **HEARTBEAT 自动化** - 配置心跳任务定时检查（推荐）
+3. **子代理模板** - 交付必须附带 3Q 评分表
+4. **定期回顾** - 使用 quality-dashboard 抽查质量指标
 
 ---
 
-## 🔧 配置示例
+## 🔧 自动化集成
 
-### HEARTBEAT.md
+3Q 体系核心是**思维框架**，自动触发需要额外集成。以下是推荐方案：
+
+### 方案 1：HEARTBEAT 机制（推荐 ⭐⭐⭐⭐⭐）
+
+利用 OpenClaw 的心跳机制实现定时质量检查：
 
 ```markdown
-## 🚀 QualityOS 统一触发器
+## 🚀 QualityOS 统一触发器（HEARTBEAT.md）
 
-**自动触发规则**：
-| 场景 | 触发技能 |
-|------|---------|
-| 文档保存 | quality-prevention |
-| 代码提交 | quality-prevention(CODE) |
-| 决策开始 | decision-checklist |
-| 子代理交付 | 3Q-Plus-v3 |
+**触发时机**：每次心跳检查时（约 30 分钟一次）
+
+**检查规则**：
+1. 检查是否有未完成的 3Q 评分任务
+2. 检查 quality-metrics.json 指标是否达标
+3. 如有新文档/代码提交，提醒进行 3Q 检查
 ```
 
-### quality-metrics.json
+**优点**：
+- ✅ 无需额外代码
+- ✅ 与 OpenClaw 原生集成
+- ✅ 可配置检查频率
 
-```json
-{
-  "autoTriggerRate": 0.90,
-  "avgScore": 14.0,
-  "sGradeRatio": 0.50,
-  "reworkRate": 0.10
-}
+**配置方法**：运行 `./install.sh` 自动添加
+
+---
+
+### 方案 2：Git Hooks（需自行配置 ⭐⭐⭐）
+
+在 Git 仓库的 `.git/hooks/pre-commit` 中添加：
+
+```bash
+#!/bin/bash
+# 3Q 代码提交前检查
+echo "🔍 运行 3Q 代码质量检查..."
+# 调用 3Q 检查逻辑（需自行实现）
 ```
+
+**优点**：提交前自动检查
+**缺点**：每个仓库需单独配置
+
+---
+
+### 方案 3：文件监听（需自行开发 ⭐⭐）
+
+使用 Node.js `fs.watch()` 或 Python `watchdog` 监听文件变化：
+
+```javascript
+// 示例：quality-watcher.js
+const fs = require('fs');
+fs.watch('./docs', (eventType, filename) => {
+  if (eventType === 'changed') {
+    console.log(`📄 ${filename} 已修改，建议运行 3Q 检查`);
+  }
+});
+```
+
+**优点**：实时触发
+**缺点**：需要额外开发和维护
+
+---
+
+### 方案对比
+
+| 方案 | 实现难度 | 自动化程度 | 推荐场景 |
+|------|----------|------------|----------|
+| **HEARTBEAT** | 低（已集成） | 中 | 个人使用、小团队 |
+| **Git Hooks** | 中 | 高 | 代码仓库、CI/CD |
+| **文件监听** | 高 | 高 | 企业级、定制化需求 |
+
+**推荐**：90% 用户使用 **HEARTBEAT 方案** 即可满足需求。
 
 ---
 
 ## 📄 许可证
 
 MIT License - 自由使用、修改、分发
+
+---
+
+## ⚠️ 免责声明
+
+**3Q 质量体系是一个思维框架和技能包集合**：
+
+- ✅ **已实现**：13 问三层结构、4 种分级检查、9 个技能包、HEARTBEAT 集成
+- ⚠️ **需自行集成**：Git hooks、文件监听、实时自动触发
+- ❌ **不包含**：外部 API 依赖、Python 脚本、事件监视器
+
+**使用建议**：
+1. 先在隔离环境测试安装脚本
+2. 备份重要配置文件
+3. 根据实际需求选择自动化方案
+
+**核心定位**：3Q 不是"开箱即用的自动触发系统"，而是"需要主动使用的质量思维框架"。自动化是锦上添花，思维转变才是核心。
 
 ---
 

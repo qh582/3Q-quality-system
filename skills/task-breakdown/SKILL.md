@@ -45,16 +45,14 @@ Breaks down complex tasks into executable steps with automatic 3Q version matchi
 ---
 
 ## 📖 详细文档
-api_used:
-  - feishu_task_task
-scripts: []
-duration: 30-60 分钟
-stages: 4
-sub_skills:
-  - self-challenge-3qdependencies:
-  - quality-prevention-milestone
+
+**依赖技能**:
   - self-challenge-3q
+  - quality-prevention-milestone
   - subagent-brief-template
+
+**持续时间**: 30-60 分钟  
+**阶段数**: 4
 
 ---
 

@@ -19,21 +19,33 @@
     "url": "https://github.com/qh582/3Q-quality-system.git"
   },
   "main": "skills/",
-  "scripts": {
-    "install": "./install.sh",
-    "postinstall": "echo '✅ 3Q 质量体系安装完成！阅读 README.md 开始使用。'"
-  },
   "engines": {
     "openclaw": ">=2.0.0",
     "node": ">=18.0.0"
   },
+  "requirements": {
+    "openclaw": ">=2.0.0",
+    "node": ">=18.0.0"
+  },
+  "installGuide": "MANUAL-INSTALL.md",
+  "optionalIntegrations": {
+    "git_hooks": "可选：代码提交前自动检查（需自行配置 .git/hooks/pre-commit）",
+    "file_watcher": "可选：文件保存时自动检查（需自行开发 quality-watcher.js）"
+  },
+  "notes": {
+    "autoTrigger": "HEARTBEAT 机制已集成，Git hooks/文件监听需自行配置",
+    "externalAPI": "本技能包不依赖任何外部 API（如飞书等）",
+    "python": "不包含 Python 脚本，所有功能通过 OpenClaw 技能实现"
+  },
   "features": [
     "13 问三层结构（逻辑 Q + 用户 Q + 竞争 Q）",
     "4 种分级检查版本（3Q-Max/Pro/Lite/Decision）",
-    "自动触发机制（文档保存/代码提交/子代理交付）",
+    "HEARTBEAT 集成（定时质量检查）",
     "15 分制质量评分系统",
     "9 个完整技能（6 核心 +3 辅助）"
   ],
+  "manualTriggers": true,
+  "autoTriggerNote": "Git hooks/文件监听需自行集成，见 README.md 自动化集成章节",
   "effects": {
     "返工率降低": "77%",
     "交付时间缩短": "40%",

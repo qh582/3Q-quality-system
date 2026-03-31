@@ -66,19 +66,26 @@ Generates visual dashboards for quality tracking:
 
 ## 🔧 使用方式
 
-```bash
-# 生成质量仪表板
-python skills/quality-dashboard/generate_dashboard.py
+**手动触发**：
+```
+对 AI 说："生成质量仪表板" 或 "quality dashboard"
+```
 
-# 输出：dashboard.md（质量指标可视化）
+**HEARTBEAT 自动触发**（推荐）：
+```markdown
+## 📊 质量仪表板（HEARTBEAT.md）
+
+**触发时机**：每周一次（如每周一 9:00）
+**输出**：dashboard.md（质量指标可视化报告）
 ```
 
 ## 📊 输出内容
 
-- 自动触发率趋势
-- 平均质量评分
+- 自动触发率趋势（基于 HEARTBEAT 检查记录）
+- 平均质量评分（15 分制）
 - S 级交付物比例
 - 返工率变化
+- 改进建议
 
 ---
 

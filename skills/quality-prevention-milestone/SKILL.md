@@ -15,7 +15,6 @@ triggers:
   - "事前事中事后"
   - "quality check"
   - "质量里程碑"
-  - "quality prevention"
 best_for: 三阶段质量预防（事前 3Q + 事中 13 检查点 + 事后 3Q）
 scenarios:
   - "项目里程碑节点"
@@ -26,39 +25,9 @@ scenarios:
 
 # quality-prevention-milestone v2.0 - 质量预防技能
 
-## 🌐 English Summary
-
-**Three-Phase Quality Prevention Framework**
-
-Proactive quality assurance across three phases:
-
-**Phase 1: Pre-Event 3Q (5 min)**
-- Ensure direction is correct before starting
-- Logic/User/Competition Q check
-
-**Phase 2: During-Event 13 Checkpoints**
-- Requirements, architecture, error handling
-- Performance, security, documentation
-- Test coverage, code style, etc.
-
-**Phase 3: Post-Event 3Q (10 min)**
-- Quality scoring (15-point scale)
-- Lessons learned
-- Knowledge base update
-
-**Effect**: Prevents 85% of common mistakes, rework rate ↓77%
-
-**Time**: 20-30 minutes total
-
-**Triggers**: `质量检查`, `质量预防`, `milestone 检查`, `quality check`
-
----
-
-## 📖 详细文档
-
 ## 📖 Overview（概述）
 
-**quality-prevention-milestone** 是 3Q 质量保障体系的预防技能，提供三阶段质量预防框架。
+**quality-prevention-milestone** 是 DivePast 质量保障体系的预防技能，提供三阶段质量预防框架。
 
 通过**事前 3Q + 事中 13 检查点 + 事后 3Q**，实现质量左移，提前发现并预防问题。
 

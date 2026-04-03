@@ -18,7 +18,17 @@ triggers:
   - "技能联动"
   - "quality trigger"
   - "3Q 检查"
-  - "auto quality check"
+  - "3Q 一下"
+  - "3Q 看一下"
+  - "用 3Q 看一下"
+  - "3Q 检查 v3"
+  - "3Q 检查 v3.1"
+  - "3Q Plus"
+  - "3Q Plus v3"
+  - "self-challenge"
+  - "自我挑战"
+  - "Simplify and Harden"
+  - "三重检查"
 best_for: QualityOS 统一触发入口 + 技能联动机制（自动触发 + 技能联动 + 质量左移）
 scenarios:
   - "文档保存时"
@@ -29,29 +39,6 @@ scenarios:
 ---
 
 # quality-os-trigger v4.0 - 质量触发器
-
-## 🌐 English Summary
-
-**QualityOS Unified Trigger & Auto-Dispatch System**
-
-Automatic quality check dispatcher that triggers appropriate 3Q skills based on task type:
-
-- **Document Save** → quality-prevention (post-3Q check)
-- **Code Commit** → quality-prevention(CODE) (13 checkpoints)
-- **Decision Start** → decision-checklist (12 decision points)
-- **Subagent Creation** → subagent-brief-template (3Q requirements)
-- **Subagent Delivery** → 3Q-Plus-v3 (acceptance check)
-- **Content Publish** → 3Q-Plus-v3 (mandatory pre-publish check)
-
-**Effect**: Auto-trigger rate ≥90%, avg score ≥14/15, rework rate ≤10%
-
-**Response Time**: <1 second
-
-**Triggers**: `质量检查`, `QualityOS`, `质量触发`, `quality trigger`
-
----
-
-## 📖 详细文档
 
 ## 📖 Overview（概述）
 
@@ -95,8 +82,11 @@ Automatic quality check dispatcher that triggers appropriate 3Q skills based on 
 | 代码提交 | quality-prevention-milestone(CODE) | 13 检查点 |
 | 决策开始 | decision-checklist | 12 决策点 |
 | 子代理创建 | subagent-brief-template | 3Q 要求 |
-| 子代理交付 | 3Q-Plus-v3 | 验收 Q |
-| 内容发布 | 3Q-Plus-v3 | 发布前检查 |
+| 子代理交付 | 3Q-Plus-v3 | 验收 Q + Simplify & Harden |
+| 内容发布 | 3Q-Plus-v3 | 发布前检查 + Simplify & Harden |
+| 用户说"3Q 检查" | 3Q-Plus-v3 | 六问框架 + 三重检查 |
+| 用户说"质量评分" | 3Q-Plus-v3 | 六问框架 + 三重检查 |
+| 用户说"Simplify and Harden" | 3Q-Plus-v3 | 三重检查（简化/加固/文档） |
 
 ---
 

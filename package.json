@@ -1,9 +1,21 @@
 {
-  "name": "3q-quality-system",
+  "name": "3q-evolution-framework",
   "version": "4.0.0",
-  "description": "3Q 质量体系 - 让高质量成为习惯的元认知质量保障系统",
+  "description": "3Q 自进化框架 - AI 助手的双循环学习系统",
   "author": "小鑫 🔮 & 小 O 🤖",
   "license": "MIT",
+  "bin": {
+    "3q-install": "./bin/install.js",
+    "3q-check": "./bin/health-check.js",
+    "3q-report": "./scripts/weekly-quality-report.js"
+  },
+  "scripts": {
+    "install": "node bin/install.js",
+    "check": "node bin/health-check.js",
+    "report": "node scripts/weekly-quality-report.js",
+    "promote": "node scripts/automated-promotion.js",
+    "test": "node test/run.js"
+  },
   "keywords": [
     "quality",
     "3Q",
@@ -99,10 +111,10 @@
   "quickstart": {
     "title": "5 分钟快速开始",
     "steps": [
-      "npx clawhub@latest install 3q-quality-system",
-      "cd 3Q-Installation-Pack",
-      "./install.sh",
-      "阅读 README.md 开始使用"
+      "npx clawhub@latest install 3q-evolution-framework",
+      "npx 3q-install",
+      "对 AI 说：'3Q 检查' 测试安装",
+      "阅读 README.md 了解完整功能"
     ]
   },
   "useCases": [

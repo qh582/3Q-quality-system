@@ -14,42 +14,11 @@ triggers:
   - "任务模板"
   - "下达任务"
   - "任务描述模板"
-  - "subagent task"
 best_for: 子代理任务描述标准化（含 3Q 质量要求）
 scenarios:
   - "给子代理下达任务时"
   - "需要标准化任务描述时"
   - "多代理协作任务分配"
----
-
-# subagent-brief-template-v3 - 子代理任务模板
-
-## 🌐 English Summary
-
-**Standardized Subagent Task Brief with Quality Requirements**
-
-Generates task briefs with built-in 3Q quality requirements:
-
-**Task Classification & 3Q Matching**:
-- Mechanical → 3Q-Lite (≥12/15, B-grade)
-- Creative → 3Q-Pro (≥13/15, A-grade)
-- Decision → 3Q-Decision (≥13/15, A-grade)
-- Integration → 3Q-Max (≥14/15, S-grade)
-
-**Brief Structure**:
-1. Task info (type, 3Q version, quality requirement)
-2. Task description (goal, background, deliverables)
-3. Quality requirements (pre/during/post 3Q checks)
-4. Deliverables (main doc + 3Q scorecard + optimization list)
-5. Timeline & resources
-
-**Effect**: Subagent delivery quality ≥A-grade, rework rate 8% (down from 40%)
-
-**Triggers**: `子代理任务`, `subagent brief`, `任务模板`, `subagent task`
-
----
-
-## 📖 详细文档
 api_used: []
 scripts: []dependencies:
   - quality-prevention-milestone

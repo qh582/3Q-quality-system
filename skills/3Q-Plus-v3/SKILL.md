@@ -10,15 +10,22 @@ depends_on:
   - quality-prevention-milestone
 triggers:
   - "3Q 检查"
+  - "3Q 一下"
+  - "3Q 看一下"
+  - "用 3Q 看一下"
+  - "3Q 检查 v3"
+  - "3Q 检查 v3.1"
   - "质量评分"
   - "自我挑战"
   - "元认知检查"
   - "六问框架"
   - "3Q Plus"
+  - "3Q Plus v3"
   - "交付物检查"
   - "重要文档检查"
-  - "3Q check"
-  - "meta-cognitive check"
+  - "Simplify and Harden"
+  - "三重检查"
+  - "简化加固"
 best_for: 重要交付物完成后的系统性质量检查（六问框架：元认知 Q/标杆 Q/挑战 Q/逻辑 Q/用户 Q/竞争 Q）
 scenarios:
   - "重要文档完成后"
@@ -27,44 +34,20 @@ scenarios:
   - "需要突破自我视角局限"
 ---
 
-# 3Q-Plus v3.0 - 元认知增强版自我挑战技能
-
-## 🌐 English Summary
-
-**Six-Question Meta-Cognitive Enhancement Framework**
-
-Advanced quality check for important deliverables using 6 dimensions:
-
-- **Meta-Cognitive Q**: Is my task understanding correct? (95% confidence)
-- **Benchmark Q**: How would top 1% in this field do it?
-- **Challenge Q**: What if my assumptions are completely wrong?
-- **Logic Q**: Is the argument self-consistent?
-- **User Q**: Is user value clear?
-- **Competition Q**: What's the differentiation?
-
-**Effect**: Ensures S-grade quality (≥14/15 points) for critical deliverables
-
-**Time**: 30-45 minutes
-
-**Score**: 15-point scale (S+:15, S:14-15, A:12-13, B:10-11, C:<10)
-
-**Triggers**: `3Q 检查`, `质量评分`, `3Q Plus`, `3Q check`, `meta-cognitive`
-
----
-
-## 📖 详细文档
+# 3Q-Plus v3.0 - 元认知增强版自我挑战技能（含 Simplify & Harden）
 
 ## 📖 Overview（概述）
 
-**3Q-Plus v3.0** 是 3Q 质量保障体系的核心技能，用于重要交付物完成后的系统性质量检查。
+**3Q-Plus v3.0** 是 DivePast 质量保障体系的核心技能，用于重要交付物完成后的系统性质量检查。
 
-通过**六问框架**（元认知 Q、标杆 Q、挑战 Q、逻辑 Q、用户 Q、竞争 Q），帮助创作者突破自我视角局限，以批判性思维和元认知能力审视内容质量。
+通过**六问框架**（元认知 Q、标杆 Q、挑战 Q、逻辑 Q、用户 Q、竞争 Q）+ **三重检查**（Simplify/Harden/Document），帮助创作者突破自我视角局限，以批判性思维和元认知能力审视内容质量。
 
 **适用场景**：
 - 重要文档完成后（PRD/技能文档/学习笔记）
 - 技能交付前
 - 项目里程碑节点
 - 需要突破自我视角局限
+- 代码/技能/系统的质量检查
 
 **质量评分**: 15/15（S 级技能）
 
@@ -73,6 +56,38 @@ Advanced quality check for important deliverables using 6 dimensions:
 **被依赖技能**:
 - `quality-os` - 质量操作系统
 - `quality-os-trigger` - 质量触发器
+
+---
+
+## 🎯 触发词说明
+
+**用户只需说以下任一触发词，自动匹配完整检查流程**：
+
+| 触发词 | 说明 |
+|--------|------|
+| `3Q 检查` | 最常用，自动触发六问框架 + 三重检查 |
+| `质量评分` | 同上 |
+| `3Q Plus` | 同上 |
+| `自我挑战` | 同上 |
+| `Simplify and Harden` | 同上（强调代码检查） |
+| `三重检查` | 同上（强调 Simplify/Harden/Document） |
+
+**内部流程**：
+```
+用户说"3Q 检查"
+    ↓
+quality-os-trigger 自动匹配
+    ↓
+调用 3Q-Plus-v3
+    ↓
+执行六问框架（30-45 分钟）
+    ↓
+执行 Simplify & Harden 三重检查（13 分钟）
+    ↓
+返回评分 + 改进建议
+```
+
+**总耗时**: 45-60 分钟（S 级质量）
 
 ---
 
@@ -101,6 +116,114 @@ Advanced quality check for important deliverables using 6 dimensions:
 | **逻辑 Q** | 论证是否自洽 | 论据是否支持论点？ |
 | **用户 Q** | 用户价值是否清晰 | 解决了什么痛点？ |
 | **竞争 Q** | 是否有差异化 | 与现有方案比有什么独特优势？ |
+
+---
+
+## 🔄 三重检查流程（Simplify & Harden 整合）
+
+### Pass 1: Simplify（简化检查）- 5 分钟
+
+**目标**：减少不必要的复杂性
+
+**检查清单**：
+- [ ] **删除死代码/未使用内容**
+  - 有未使用的导入/变量/函数吗？
+  - 有调试日志/临时注释吗？
+  - 有尝试过的废弃方案吗？
+
+- [ ] **改进命名清晰度**
+  - 变量/函数名一看就懂吗？
+  - 有模糊的缩写吗？
+  - 命名反映真实意图吗？
+
+- [ ] **扁平化控制流**
+  - 有超过 3 层的嵌套吗？
+  - 可以用 early return 简化吗？
+  - 布尔表达式能简化吗？
+
+- [ ] **减少过度抽象**
+  - 有不必要的类/接口吗？
+  - 有过度设计的模式吗？
+  - 能直接用简单方案吗？
+
+**奥卡姆剃刀原则**：如无必要，勿增实体。
+
+---
+
+### Pass 2: Harden（加固检查）- 5 分钟
+
+**目标**：关闭安全和韧性缺口
+
+**检查清单**：
+- [ ] **输入验证**
+  - 所有外部输入都验证了吗？
+  - 有类型强制转换问题吗？
+  - 有边界检查吗？
+
+- [ ] **错误处理**
+  - catch 块具体吗？
+  - 错误日志有上下文但不泄露敏感信息吗？
+  - 有被吞掉的异常吗？
+
+- [ ] **注入向量检查**
+  - 有 SQL 注入风险吗？
+  - 有 XSS 风险吗？
+  - 有命令注入/路径遍历风险吗？
+
+- [ ] **认证/授权检查**
+  - 新端点/函数有认证吗？
+  - 权限检查正确吗？
+  - 有权限提升风险吗？
+
+- [ ] **密钥和凭证**
+  - 有硬编码的密钥/API 令牌吗？
+  - 连接字符串参数化了吗？
+  - 日志中有凭证泄露吗？
+
+- [ ] **数据暴露**
+  - 错误输出/日志/API 响应泄露内部状态吗？
+  - 有 PII（个人身份信息）泄露吗？
+
+---
+
+### Pass 3: Document（微文档）- 3 分钟
+
+**目标**：捕获非显而易见的决策
+
+**规则**：
+- 对于需要超过 5 秒思考"为什么这样写"的逻辑：添加单行注释
+- 对于任何变通方案/hack：添加上下文和 TODO
+- 对于性能敏感的选择：说明为什么选择当前方案
+- **最多 5 条注释**（这不是文档冲刺）
+
+**注释模板**：
+```javascript
+// WHY: 使用 cursor-based 分页而非 offset —— offset 在 items 删除后会断裂
+
+// WORKAROUND: 遗留 API 返回无时区日期字符串，假设 UTC 直到迁移完成（见 TICKET-1234）
+
+// PERFORMANCE: 使用 Map 而非 Object —— 频繁增删操作，避免原型链开销
+```
+
+---
+
+## 📊 整合后的完整流程
+
+```
+任务完成
+    ↓
+[3Q-Plus 六问框架]（30-45 分钟）
+    ↓
+[Simplify Pass]（5 分钟）
+    ↓
+[Harden Pass]（5 分钟）
+    ↓
+[Document Pass]（3 分钟）
+    ↓
+交付
+```
+
+**总时间**：45-60 分钟（S 级质量）
 
 ---
 

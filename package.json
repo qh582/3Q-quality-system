@@ -10,7 +10,15 @@
     "guardrails",
     "ai-quality",
     "meta-cognition",
-    "quality-assurance"
+    "quality-assurance",
+    "agent-skills",
+    "claude-code",
+    "cursor-rules",
+    "codex",
+    "AI-output",
+    "prompt-engineering",
+    "self-review",
+    "awesome-agent"
   ],
   "homepage": "https://github.com/qh582/3Q-quality-system",
   "repository": {

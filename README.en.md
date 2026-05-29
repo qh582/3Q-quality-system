@@ -2,9 +2,14 @@
 
 > **Break through your AI's self-perspective limitations.** Six cognitive lenses + three spatial dimensions — makes AI see what it would naturally miss.
 
+**中文**: 3Q 质量系统 — 给 AI 装上质量护栏。支持 Claude Code / Cursor / Codex / OpenClaw.
+
 [![Quality Score](https://img.shields.io/badge/quality-15/15-brightgreen)]()
 [![Version](https://img.shields.io/badge/version-v7.11.0-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
+[![Awesome](https://awesome.re/badge.svg)]()
+
+> **Topics**: `AI-quality` · `agent-skills` · `quality-guardrails` · `claude-code` · `cursor-rules`
 
 ## The Problem: AI (and humans) are trapped in their own perspective
 
@@ -146,7 +151,8 @@ A: Code review, analysis reports, content creation, product design, decision eva
 │       ├── SKILL.md
 │       └── references/
 │           ├── three-dimensions.md
-│           └── daily-check-template.md
+│           ├── daily-check-template.md
+│           └── decision-checklist.md
 ├── README.md                    # Chinese (primary)
 ├── README.en.md                 # English (this file)
 ├── package.json

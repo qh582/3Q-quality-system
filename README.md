@@ -2,9 +2,16 @@
 
 > **突破 AI 的自我视角局限。** 六问框架 + 三维纵深，让 AI 看到自己看不到的盲区。
 
+**English**: 3Q Quality System — Cognitive guardrails for AI agents (Claude Code, Cursor, Codex).
+
 [![Quality Score](https://img.shields.io/badge/quality-15/15-brightgreen)]()
 [![Version](https://img.shields.io/badge/version-v7.11.0-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
+[![GitHub stars](https://img.shields.io/github/stars/qh582/3Q-quality-system)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)]()
+[![Awesome](https://awesome.re/badge.svg)]()
+
+> **话题 / Topics**: `AI-quality` · `agent-skills` · `quality-guardrails` · `claude-code` · `cursor-rules` · `codex-skills` · `meta-cognition` · `AI-output` · `prompt-engineering` · `self-review`
 
 ---
 

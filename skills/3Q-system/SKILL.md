@@ -1,6 +1,14 @@
 ---
 name: 3q-quality-system
 version: v7.11.0
+tags:
+  - quality
+  - guardrails
+  - agent-skills
+  - claude-code
+  - cursor-rules
+  - codex
+  - meta-cognition
 
 triggers:
   - "3Q 检查"

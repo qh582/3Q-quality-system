@@ -21,21 +21,6 @@
 
 **一句话**：让 AI 从"答完了就交"变成"停下来想一想再交"。
 
-```mermaid
-flowchart TB
-    A["📥 任务输入"] --> B["🔍 Layer 0: 预审三问"]
-    B --> C["⚡ 执行中"]
-    C --> D{"Layer 0.5: 快速3Q"}
-    D -->|✅ 通过| E["📤 交付"]
-    D -->|❌ 异常| F["🔬 Layer 1: 深度3Q"]
-    F -->|≥70分| E
-    F -->|<70分| C
-    
-    F --> G["🔄 自修正"]
-    G -->|同类错误≥3次| H["📝 添加防犯规则"]
-    H --> C
-```
-
 ---
 
 ## 认知进化：六问框架
@@ -263,7 +248,8 @@ A: 代码审查、分析报告、内容创作、产品设计、决策评估。�
 │       ├── SKILL.md                    # 核心技能（注入 AI agent）
 │       └── references/
 │           ├── three-dimensions.md     # 三维扩展详解
-│           └── daily-check-template.md # 🆕 每日 5 分钟 3Q 自查模板
+│           ├── daily-check-template.md # 🆕 每日 5 分钟 3Q 自查模板
+│           └── decision-checklist.md   # 🆕 重大决策 12 检查点
 ├── README.md                           # 中文说明
 ├── README.en.md                        # English version
 ├── package.json                        # npx skills add 支持

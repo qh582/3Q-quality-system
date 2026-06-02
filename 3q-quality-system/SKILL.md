@@ -1,27 +1,30 @@
 ---
 name: 3q-quality-system
-version: v7.11.0
-tags:
-  - quality
-  - guardrails
-  - agent-skills
-  - claude-code
-  - cursor-rules
-  - codex
-  - meta-cognition
-
-triggers:
-  - "3Q 检查"
-  - "质量检查"
-  - "3Q一下"
-  - "3Q check"
-  - "quality check"
-  - "预检"
-  - "快速3Q"
-  - "深度3Q"
-  - "盲审"
-  - "六问"
-  - "自审"
+description: "3Q 自进化质量检查系统 — 让 AI 自动学习用户偏好，犯错后自动记录改进，文档/代码/决策发布前自动质量把控。包含逻辑Q（逻辑链条验证）、用户Q（用户假设检验）、竞争Q（竞争维度评估）三维评估体系，支持15分制量化评分。适用于 Claude Code、Cursor、Codex 等 Agent 工作流的质量门禁。"
+license: MIT
+compatibility: "支持 Claude Code、Cursor Rules、Codex CLI 等 Agent 运行环境。需 Markdown 读取权限。"
+metadata:
+  version: v7.11.0
+  tags:
+    - quality
+    - guardrails
+    - agent-skills
+    - claude-code
+    - cursor-rules
+    - codex
+    - meta-cognition
+  triggers:
+    - 3Q 检查
+    - 质量检查
+    - 3Q一下
+    - 3Q check
+    - quality check
+    - 预检
+    - 快速3Q
+    - 深度3Q
+    - 盲审
+    - 六问
+    - 自审
 
 scenarios:
   - "AI 输出交付前的质量检查"

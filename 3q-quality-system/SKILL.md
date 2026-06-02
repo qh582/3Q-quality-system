@@ -1,5 +1,5 @@
 ---
-name: 3q-quality-system
+name: triple-q-system
 description: "3Q 自进化质量检查系统 — 让 AI 自动学习用户偏好，犯错后自动记录改进，文档/代码/决策发布前自动质量把控。包含逻辑Q（逻辑链条验证）、用户Q（用户假设检验）、竞争Q（竞争维度评估）三维评估体系，支持15分制量化评分。适用于 Claude Code、Cursor、Codex 等 Agent 工作流的质量门禁。"
 license: MIT
 compatibility: "支持 Claude Code、Cursor Rules、Codex CLI 等 Agent 运行环境。需 Markdown 读取权限。"
